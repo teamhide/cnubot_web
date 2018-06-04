@@ -1,0 +1,47 @@
+.section-home {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section-wrap {
+    height: auto;
+}
+.menubox {
+    height: 350px;
+    width: 300px;
+    margin: 20px;
+    border: 0px solid lightgray;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 10px;
+
+    -moz-box-shadow: 0px 5px 5px lightgray;
+    -webkit-box-shadow: 0px 5px 5px lightgray;
+    box-shadow: 0px 5px 5px lightgray;
+}
+.menubox-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 0.2px solid lightgray;
+}
+.menubox-header span:first-child {
+    font-size: 1.3rem;
+}
+.menubox-header span:last-child {
+    margin-top: 2px;
+    margin-left: 10px;
+    font-size: 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 0.2rem;
+    padding: 4px;
+    background-color: #4a53e0;
+    color: white;
+    cursor: pointer;
+}
+.menubox-body {
+    margin-top: 10px;
+    font-weight: 100;
+}
