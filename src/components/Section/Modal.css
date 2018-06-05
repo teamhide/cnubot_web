@@ -24,13 +24,14 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid lightgray;
+    overflow: hidden;
 }
 .modal-body {
     height: 330px;
     padding: 10px;
     font-size: 0.9rem;
     border-bottom: 1px solid lightgray;
-    overflow: auto;
+    overflow: hidden;
 }
 .modal-footer button {
     border: none;

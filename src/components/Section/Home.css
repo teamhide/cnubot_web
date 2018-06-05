@@ -20,6 +20,7 @@
     -moz-box-shadow: 0px 5px 5px lightgray;
     -webkit-box-shadow: 0px 5px 5px lightgray;
     box-shadow: 0px 5px 5px lightgray;
+    overflow: auto;
 }
 .menubox-header {
     display: flex;
@@ -28,8 +29,13 @@
     padding: 10px;
     border-bottom: 0.2px solid lightgray;
 }
-.menubox-header span:first-child {
-    font-size: 1.3rem;
+.menubox-header a:first-child {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: black;
+}
+.menubox-header a:first-child:hover {
+    color: #4a53e0;
 }
 .menubox-header span:last-child {
     margin-top: 2px;
@@ -46,4 +52,16 @@
     margin-top: 10px;
     font-weight: 100;
     font-size: 0.8rem;
+}
+.menubox-dorm {
+    min-height: 100px;
+    overflow: hidden;
+}
+/* MENUBOX - DATE */
+.menubox-date {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    border-bottom: 0.2px solid lightgray;
+    padding: 10px;
 }

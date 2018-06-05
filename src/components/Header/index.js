@@ -10,7 +10,7 @@ class index extends Component {
                     <NavLink to="/">CNUBAB</NavLink>
                 </div>
                 <div className="header-menu">
-                    <NavLink to="/">HOME</NavLink>
+                    <NavLink to="/">MENU</NavLink>
                     <NavLink to="/about">ABOUT</NavLink>
                 </div>
             </header>

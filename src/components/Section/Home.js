@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Modal from './Modal';
+import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             modalVisible: false,
-            place: ''
+            student2: '',
+            student3: '',
+            sangrok: '',
+            science: '',
+            dormitory: '',
+            numToDay: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
         }
     }
     modalSwitch = (place) => {
@@ -17,61 +23,84 @@ class Home extends Component {
         });
     }
     componentDidMount() {
-        this._getMenu();
+        var day = new Date();
+        var today = day.getDay();
+        this._getMenu(this.state.numToDay[today]);
     }
-    _getMenu = () => {
+    _getMenu = async (day) => {
+        const menu = await this._callApi(day);
+        try {
+            this.setState({
+                dormitory: menu[0][day],
+                sangrok: menu[1][day],
+                science: menu[2][day],
+                student2: menu[3][day],
+                student3: menu[4][day],
+            })
+        } catch(error) {
+            console.log("MENU API ERROR");
+        }
     }
-    _callApi = () => {
-        fetch("http://api.highfaiv.kr/menu/?format=json", {
-            headers: {'Access-Control-Allow-Origin': '*'}
-        })
+    _callApi = (day) => {
+        return fetch("http://api.highfaiv.kr/menu/?format=json")
         .then(response => response.json())
-        .then(data => console.log(data))
+        .catch(err => console.log("Connection fail"))
     }
     render() {
-        const { modalVisible } = this.state;
+        const { modalVisible, student2, student3, sangrok, science, dormitory } = this.state;
         return (
             <div className="section-home">
                 { modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>제2학생회관</span>
+                        <NavLink to="/student2">제2학생회관</NavLink>
                         <span onClick={() => this.modalSwitch("제2학생회관")}>운영시간</span>
                     </div>
+                    <div className="menubox-date">
+                        2018년 5월 16일
+                    </div>
                     <div className="menubox-body">
-                        식단 없음
+                        { student2 ? student2.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
                     </div> 
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>제3학생회관</span>
+                    <NavLink to="/student3">제3학생회관</NavLink>
                         <span onClick={() => this.modalSwitch("제3학생회관")}>운영시간</span>
                     </div>
                     <div className="menubox-body">
-                        식단 없음
+                    { student3 ? student3.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
                     </div> 
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>상록회관</span>
+                        <NavLink to="/sangrok">상록회관</NavLink>
                         <span onClick={() => this.modalSwitch("상록회관")}>운영시간</span>
                     </div>
                     <div className="menubox-body">
-                        식단 없음
+                    { sangrok ? sangrok.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
                     </div> 
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>생활과학대학</span>
+                        <NavLink to="/science">생활과학대학</NavLink>
                         <span onClick={() => this.modalSwitch("생활과학대학")}>운영시간</span>
                     </div>
                     <div className="menubox-body">
-                        식단 없음
+                    { science ? science.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
                     </div> 
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>제1학생회관</span>
+                    <NavLink to="/student1">제1학생회관</NavLink>
                         <span onClick={() => this.modalSwitch("제1학생회관")}>운영시간</span>
                     </div>
                     <div className="menubox-body">
@@ -80,11 +109,13 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <span>기숙사</span>
+                    <NavLink to="/dormitory">기숙사</NavLink>
                         <span onClick={() => this.modalSwitch("기숙사")}>운영시간</span>
                     </div>
-                    <div className="menubox-body">
-                        식단 없음
+                    <div className="menubox-body menubox-dorm">
+                    { dormitory ? dormitory.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
                     </div> 
                 </div>
             </div>

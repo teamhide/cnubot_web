@@ -9,13 +9,13 @@
 .footer p:first-child {
     margin-bottom: -10px;
 }
-a {
+.footer a {
     text-decoration: none;
 }
-a:visited {
+.footer a:visited {
     color: black;
 }
-a:hover {
+.footer a:hover {
     text-decoration: underline;
     color: darkblue;
 }
