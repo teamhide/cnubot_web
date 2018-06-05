@@ -19,6 +19,7 @@ class Student3 extends Component {
         }
     }
     componentDidMount() {
+        window.scrollTo(0, 0)
         var day = new Date();
         var today = day.getDay();
         this.setState({

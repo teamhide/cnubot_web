@@ -4,6 +4,9 @@ import KakaoBotImg1 from '../../img/cnubot.png';
 import KakaoBotImg2 from '../../img/cnubot2.png';
 
 class About extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     render() {
         return (
             <div className="section-about">
