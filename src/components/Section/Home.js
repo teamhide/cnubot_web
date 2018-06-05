@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Modal from './Modal';
 import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            today: new Date().toISOString().split('T')[0],
             modalVisible: false,
             student2: '',
             student3: '',
@@ -47,17 +47,16 @@ class Home extends Component {
         .catch(err => console.log("Connection fail"))
     }
     render() {
-        const { modalVisible, student2, student3, sangrok, science, dormitory } = this.state;
+        const { today, student2, student3, sangrok, science, dormitory } = this.state;
         return (
             <div className="section-home">
-                { modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }
+                {/*{ modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }*/}
                 <div className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/student2">제2학생회관</NavLink>
-                        <span onClick={() => this.modalSwitch("제2학생회관")}>운영시간</span>
+                        <NavLink to="/student2">제2학생회관</NavLink><span>{today}</span>
                     </div>
                     <div className="menubox-date">
-                        2018년 5월 16일
+                        <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
                         { student2 ? student2.split('\n').map( line => {
@@ -67,8 +66,10 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/student3">제3학생회관</NavLink>
-                        <span onClick={() => this.modalSwitch("제3학생회관")}>운영시간</span>
+                        <NavLink to="/student3">제3학생회관</NavLink><span>{today}</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
                     { student3 ? student3.split('\n').map( line => {
@@ -78,8 +79,10 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/sangrok">상록회관</NavLink>
-                        <span onClick={() => this.modalSwitch("상록회관")}>운영시간</span>
+                        <NavLink to="/sangrok">상록회관</NavLink><span>{today}</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
                     { sangrok ? sangrok.split('\n').map( line => {
@@ -89,8 +92,10 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/science">생활과학대학</NavLink>
-                        <span onClick={() => this.modalSwitch("생활과학대학")}>운영시간</span>
+                        <NavLink to="/science">생활과학대학</NavLink><span>{today}</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
                     { science ? science.split('\n').map( line => {
@@ -100,8 +105,11 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/student1">제1학생회관</NavLink>
-                        <span onClick={() => this.modalSwitch("제1학생회관")}>운영시간</span>
+                    <NavLink to="/student1">제1학생회관</NavLink><span>{today}</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 11:00 ~ 오후 07:00</span>
+                        <span><b>토</b> : 오전 11:00 ~ 오후 02:00 / <b>일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
                         식단 없음
@@ -109,8 +117,11 @@ class Home extends Component {
                 </div>
                 <div className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/dormitory">기숙사</NavLink>
-                        <span onClick={() => this.modalSwitch("기숙사")}>운영시간</span>
+                    <NavLink to="/dormitory">기숙사</NavLink><span>{today}</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 07:00 ~ 오전 09:00</span><span>오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:30</span>
+                        <span><b>토 ~ 일</b> : 오전 07:30 ~ 오전 09:00</span><span>오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:00</span>
                     </div>
                     <div className="menubox-body menubox-dorm">
                     { dormitory ? dormitory.split('\n').map( line => {
