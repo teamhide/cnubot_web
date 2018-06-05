@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import './Science.css';
+import Menubox from './Menubox';
 
 class Science extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            today: '',
             mon: '',
             tue: '',
             wed: '',
             thu: '',
             fri: '',
             sat: '',
-            sun: ''
+            sun: '',
+            menuArr: [],
+            dayArr: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
         }
     }
     componentDidMount() {
+        var day = new Date();
+        var today = day.getDay();
+        this.setState({
+            today: today
+        })
         this._getMenu();
     }
     _getMenu = async () => {
@@ -28,86 +37,31 @@ class Science extends Component {
             sat: menu['sat'],
             sun: menu['sun']
         })
+        let copyArr = this.state.menuArr.slice(); //creates the clone of the state
+        for(var i = 0; i <= 6; i++) {
+            copyArr[i] = menu[this.state.dayArr[i]];
+        }
+        this.setState({menuArr: copyArr});
     }
     _callApi = () => {
         return fetch("http://api.highfaiv.kr/menu/science/?format=json")
         .then(response => response.json())
         .catch(err => console.log("Connection fail"))
     }
+    _renderMenuBox = () => {
+        var arr = [];
+        var forLoopDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+        arr.push(<Menubox menu={this.state.menuArr[this.state.today]} place="생활과학대학"/>);
+        for(var i = this.state.today + 1; i <= 6; i++) {
+            arr.push(<Menubox menu={this.state.menuArr[i]} key={i} day={forLoopDay[i]} place="생활과학대학"/>);
+        }
+        return arr
+    }
     render() {
         const { mon, tue, wed, thu, fri, sat, sun } = this.state;
         return (
             <div className="section-science">
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>월요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { mon ? mon.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>화요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { tue ? tue.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>수요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { wed ? wed.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>목요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { thu ? thu.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>금요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { fri ? fri.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>토요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { fri ? fri.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                        생활과학대학<span>일요일</span>
-                    </div>
-                    <div className="menubox-body">
-                        { sun ? sun.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div>
-                </div>
+                { this._renderMenuBox() }
             </div>
         );
     }
