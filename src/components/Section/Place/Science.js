@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Science.css';
-import Menubox from './Menubox';
+import Menubox from '../Menubox';
 
 class Science extends Component {
     constructor(props) {

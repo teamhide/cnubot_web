@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Student3.css';
-import Menubox from './Menubox';
+import './Dormitory.css';
+import Menubox from '../Menubox';
 
-class Student3 extends Component {
+class Dormitory extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,26 +45,26 @@ class Student3 extends Component {
         this.setState({menuArr: copyArr});
     }
     _callApi = () => {
-        return fetch("http://api.highfaiv.kr/menu/student3/?format=json")
+        return fetch("http://api.highfaiv.kr/menu/dormitory/?format=json")
         .then(response => response.json())
         .catch(err => console.log("Connection fail"))
     }
     _renderMenuBox = () => {
         var arr = [];
         var forLoopDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-        arr.push(<Menubox menu={this.state.menuArr[this.state.today]} place="제3학생회관"/>);
+        arr.push(<Menubox menu={this.state.menuArr[this.state.today]}  place="기숙사"/>);
         for(var i = this.state.today + 1; i <= 6; i++) {
-            arr.push(<Menubox menu={this.state.menuArr[i]} key={i} day={forLoopDay[i]} place="제3학생회관"/>);
+            arr.push(<Menubox menu={this.state.menuArr[i]} key={i} day={forLoopDay[i]} place="기숙사"/>);
         }
         return arr
     }
     render() {
         return (
-            <div className="section-student3">
+            <div className="section-dormitory">
                 { this._renderMenuBox() }
             </div>
         );
     }
 }
 
-export default Student3;
+export default Dormitory;

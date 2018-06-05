@@ -22,7 +22,7 @@ class Menubox extends Component {
             <div>
                 <div className="menubox">
                     <div className="menubox-header">
-                        {this.props.place}<span>{ this.state.numToDay[day] ? this.state.numToDay[day] : "오늘"}</span>
+                        <span className="menubox-place">{this.props.place}</span><span>{ this.state.numToDay[day] ? this.state.numToDay[day] : "오늘"}</span>
                     </div>
                     <div className="menubox-body">
                         { menu ? menu.split('\n').map( line => {

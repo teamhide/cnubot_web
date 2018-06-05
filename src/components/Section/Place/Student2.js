@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Student2.css';
-import Menubox from './Menubox';
+import Menubox from '../Menubox';
 
 class Student2 extends Component {
     constructor(props) {
