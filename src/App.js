@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Section/Home';
 import About from './components/Section/About';
 import Footer from './components/Footer';
+import Modal from './components/Section/Modal';
 
 class App extends Component {
   render() {

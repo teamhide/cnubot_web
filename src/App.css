@@ -5,13 +5,9 @@ html, body {
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
 }
-#root {
-    height: 100%;
-}
 .App {
     height: 100%;
 }
 section {
     background-color: #efefef;
-    min-height: 100%;
 }

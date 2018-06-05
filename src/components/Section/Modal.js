@@ -4,33 +4,8 @@ import './Modal.css';
 class Modal extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            place: '',
-            student1: '',
-            student2: `
-            <span>월요일</span>
-            <span className="workhour">오전 11:30 ~ 오후 02:00</span>
-            <span>화요일</span>
-            <span className="workhour">오전 11:30 ~ 오후 02:00</span>
-            <span>수요일</span>
-            <span className="workhour">오전 11:30 ~ 오후 02:00</span>
-            <span>목요일</span>
-            <span className="workhour">오전 11:30 ~ 오후 02:00</span>
-            <span>금요일</span>
-            <span className="workhour">오전 11:30 ~ 오후 02:00</span>
-            <span>토요일</span>
-            <span className="workhour">영업 안함</span>
-            <span>일요일</span>
-            <span className="workhour">영업 안함</span>
-            `,
-            student3: '',
-            sangrok: '',
-            science: '',
-            dormitory: ''
-        }
     }
     _renderWorkHour = (place) => {
-        console.log(place);
         let workHour = "";
         if(place === "제2학생회관" || place === "제3학생회관" || place === "상록회관" || place === "생활과학대학") {
             workHour = `
@@ -52,33 +27,33 @@ class Modal extends Component {
         } else if(place === "기숙사") {
             workHour = `
             <span class="dorm-header">월요일</span>
-            <span>오전 07:00 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:30</span>
+            <span class="dorm-body">오전 07:00 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:30</span>
             <span class="dorm-header">화요일</span>
-            <span>오전 07:00 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:30</span>
+            <span class="dorm-body">오전 07:00 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:30</span>
             <span class="dorm-header">수요일</span>
-            <span>오전 07:00 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:30</span>
+            <span class="dorm-body">오전 07:00 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:30</span>
             <span class="dorm-header">목요일</span>
-            <span>오전 07:00 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:30</span>
-            <span>금요일</span>
-            <span>오전 07:00 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:30</span>
-            <span>토요일</span>
-            <span>오전 07:30 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:00</span>
-            <span>일요일</span>
-            <span>오전 07:30 ~ 오전 09:00</span>
-            <span>오전 11:30 ~ 오후 01:30</span>
-            <span>오후 05:30 ~ 오후 07:00</span>
+            <span class="dorm-body">오전 07:00 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:30</span>
+            <span class="dorm-header">금요일</span>
+            <span class="dorm-body">오전 07:00 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:30</span>
+            <span class="dorm-header">토요일</span>
+            <span class="dorm-body">오전 07:30 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:00</span>
+            <span class="dorm-header">일요일</span>
+            <span class="dorm-body">오전 07:30 ~ 오전 09:00</span>
+            <span class="dorm-body">오전 11:30 ~ 오후 01:30</span>
+            <span class="dorm-body">오후 05:30 ~ 오후 07:00</span>
             `
         } else if(place === "제1학생회관") {
             workHour = `
@@ -101,7 +76,7 @@ class Modal extends Component {
             workHour = "Error"
         }
         return (
-            <div className="modal-container">
+            <div className="modal-container" onClick={() => console.log(1)} >
                 <div className="modal-header">
                     { this.props.place ? this.props.place : "Loading" }
                 </div>

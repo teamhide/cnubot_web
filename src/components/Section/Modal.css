@@ -1,16 +1,16 @@
 .modal {
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: auto;
+    min-height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
 .modal-container {
     border-radius: 0.2rem;
-    position: relative;
-    top: 5%;
-    height: auto;
+    position: fixed;
+    top: 15%;
+    left: 35%;
     width: 300px;
     margin: auto;
     background-color: white;
@@ -26,9 +26,11 @@
     border-bottom: 1px solid lightgray;
 }
 .modal-body {
+    height: 330px;
     padding: 10px;
     font-size: 0.9rem;
     border-bottom: 1px solid lightgray;
+    overflow: auto;
 }
 .modal-footer button {
     border: none;
@@ -44,5 +46,16 @@
     margin-bottom: 5px;
 }
 .dorm-header {
-
+    font-size: 0.8rem !important;
+}
+.dorm-body {
+    font-size: 0.8rem !important;
+    font-weight: 100;
+    margin-bottom: 5px !important;
+}
+@media screen and (max-width: 760px) {
+    .modal-container {
+        top: 12%;
+        left: 12%;
+    }
 }
