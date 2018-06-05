@@ -1,7 +1,25 @@
 header{
     display: flex;
-    height: 60px;
+    flex-direction: column;
+}
+.pc-menu {
+    display: flex;
     align-items: center;
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+}
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.mobile-menu a {
+    padding: 15px;
+    padding-left: 20px;
+    font-weight: 300;
+}
+.mobile-menu a:not(:last-child) {
     border-bottom: 1px solid lightgray;
 }
 header a {
@@ -22,4 +40,35 @@ header a {
 }
 .header-menu a {
     margin-right: 20px;
+}
+/* HAMBURGER */
+.header-logo label {
+    display: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+#toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+    .header-logo {
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-logo label {
+        display: block;
+    }
+    .header-menu {
+        display: none;
+    }
+    .mobile-menu a:hover {
+        background-color: #efefef;
+    }
+    #toggle:checked + .mobile-menu {
+        display: flex;
+    }
 }
