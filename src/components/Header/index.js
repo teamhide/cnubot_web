@@ -18,9 +18,9 @@ class index extends Component {
         return (
             <div className="mobile-menu">
                 <NavLink to="/" onClick={this._toggleSwitch}>메뉴</NavLink>
-                <NavLink to="/about">소개</NavLink>
-                <NavLink to="/lotto">추천</NavLink>
-                <NavLink to="/honbab">단무지</NavLink>
+                <NavLink to="/about" onClick={this._toggleSwitch}>소개</NavLink>
+                <NavLink to="/lotto" onClick={this._toggleSwitch}>추천</NavLink>
+                <NavLink to="/honbab" onClick={this._toggleSwitch}>단무지</NavLink>
             </div>
         )
     }
@@ -31,7 +31,7 @@ class index extends Component {
                 <div className="pc-menu">
                     <div className="header-logo">
                         <NavLink to="/">CNUBAB</NavLink>
-                        <label htmlFor="toggle" onClick={this._toggleSwitch}>&#9776;</label>
+                        <span onClick={this._toggleSwitch}>&#9776;</span>
                     </div>
                     <div className="header-menu">
                         <NavLink to="/">메뉴</NavLink>
@@ -40,7 +40,7 @@ class index extends Component {
                         <NavLink to="/honbab">단무지</NavLink>
                     </div>
                 </div>
-                <input type="checkbox" id="toggle" />
+                
                 { toggle ? this._renderToggle() : "" }
             </header>
         );

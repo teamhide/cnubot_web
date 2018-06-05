@@ -9,7 +9,7 @@ header{
     border-bottom: 1px solid lightgray;
 }
 .mobile-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: white;
     border-bottom: 1px solid lightgray;
@@ -42,19 +42,13 @@ header a {
     margin-right: 20px;
 }
 /* HAMBURGER */
-.header-logo label {
+.header-logo span {
     display: none;
     cursor: pointer;
     margin-right: 15px;
 }
-#toggle {
-    display: none;
-}
 
 @media screen and (max-width: 768px) {
-    .mobile-menu {
-        display: none;
-    }
     .header-logo {
         display: flex;
         justify-content: space-between;
@@ -68,7 +62,12 @@ header a {
     .mobile-menu a:hover {
         background-color: #efefef;
     }
+    .header-logo span {
+        display: block;
+    }
+    /*
     #toggle:checked + .mobile-menu {
         display: flex;
     }
+    */
 }
