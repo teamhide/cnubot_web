@@ -34,12 +34,12 @@
     padding: 10px;
     border-bottom: 0.2px solid lightgray;
 }
-.menubox-header a:first-child {
+.menubox-header span:first-child {
     font-size: 1.1rem;
     text-decoration: none;
     color: black;
 }
-.menubox-header a:first-child:hover {
+.menubox-header span:first-child:hover {
     color: #4a53e0;
 }
 .menubox-header span:last-child {

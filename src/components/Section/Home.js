@@ -54,20 +54,20 @@ class Home extends Component {
                 {/*{ modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }*/}
                 <NavLink to="/student2" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/student2">제2학생회관</NavLink><span>오늘</span>
+                        <span>제2학생회관</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
                     </div>
                     <div className="menubox-body">
-                        { student2 ? student2.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
+                        { student2 ? student2.split('\n').map( (line) => {
+                                    return (<span key={line.uniqueId}>{line}<br/></span>)})
                         : "식단 없음"}
                     </div> 
                 </NavLink>
                 <NavLink to="/student3" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/student3">제3학생회관</NavLink><span>오늘</span>
+                        <span>제3학생회관</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -80,7 +80,7 @@ class Home extends Component {
                 </NavLink>
                 <NavLink to="/sangrok" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/sangrok">상록회관</NavLink><span>오늘</span>
+                        <span>상록회관</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -93,7 +93,7 @@ class Home extends Component {
                 </NavLink>
                 <NavLink to="/science" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/science">생활과학대학</NavLink><span>오늘</span>
+                        <span>생활과학대학</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -106,7 +106,7 @@ class Home extends Component {
                 </NavLink>
                 <NavLink to="/dormitory" className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/dormitory">기숙사</NavLink><span>오늘</span>
+                        <span>기숙사</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 07:00 ~ 오전 09:00</span><span className="dorm-time-margin">오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:30</span>
@@ -120,7 +120,7 @@ class Home extends Component {
                 </NavLink>
                 <NavLink to="/student1" className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/student1">제1학생회관</NavLink><span>오늘</span>
+                        <span>제1학생회관</span><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:00 ~ 오후 07:00</span>
