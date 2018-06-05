@@ -58,7 +58,6 @@ class Dormitory extends Component {
         return arr
     }
     render() {
-        const { mon, tue, wed, thu, fri, sat, sun } = this.state;
         return (
             <div className="section-dormitory">
                 { this._renderMenuBox() }

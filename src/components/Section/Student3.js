@@ -51,13 +51,13 @@ class Student3 extends Component {
     _renderMenuBox = () => {
         var arr = [];
         var forLoopDay = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-        for(var i = this.state.today; i <= 6; i++) {
+        arr.push(<Menubox menu={this.state.menuArr[this.state.today]} place="제3학생회관"/>);
+        for(var i = this.state.today + 1; i <= 6; i++) {
             arr.push(<Menubox menu={this.state.menuArr[i]} key={i} day={forLoopDay[i]} place="제3학생회관"/>);
         }
         return arr
     }
     render() {
-        const { mon, tue, wed, thu, fri, sat, sun } = this.state;
         return (
             <div className="section-student3">
                 { this._renderMenuBox() }

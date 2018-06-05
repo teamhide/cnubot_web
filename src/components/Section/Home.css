@@ -16,11 +16,16 @@
     border-radius: 0.5rem;
     background-color: white;
     padding: 10px;
+    text-decoration: none;
+    color: black;
 
     -moz-box-shadow: 0px 5px 5px lightgray;
     -webkit-box-shadow: 0px 5px 5px lightgray;
     box-shadow: 0px 5px 5px lightgray;
     overflow: auto;
+}
+.menubox:hover {
+    box-shadow: 10px 10px 10px 10px lightgray;
 }
 .menubox-header {
     display: flex;
@@ -70,6 +75,6 @@
 .menubox-date span {
     font-size: 0.7rem;
 }
-.menubox-date span:nth-child(2) {
+.dorm-time-margin {
     margin-bottom: 10px;
 }

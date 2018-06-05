@@ -58,7 +58,6 @@ class Sangrok extends Component {
         return arr
     }
     render() {
-        const { mon, tue, wed, thu, fri, sat, sun } = this.state;
         return (
             <div className="section-sangrok">
                 { this._renderMenuBox() }

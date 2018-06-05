@@ -58,7 +58,6 @@ class Science extends Component {
         return arr
     }
     render() {
-        const { mon, tue, wed, thu, fri, sat, sun } = this.state;
         return (
             <div className="section-science">
                 { this._renderMenuBox() }

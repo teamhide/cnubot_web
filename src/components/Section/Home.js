@@ -51,9 +51,9 @@ class Home extends Component {
         return (
             <div className="section-home">
                 {/*{ modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }*/}
-                <div className="menubox">
+                <NavLink to="/student2" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/student2">제2학생회관</NavLink><span>{today}</span>
+                        <NavLink to="/student2">제2학생회관</NavLink><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -63,10 +63,10 @@ class Home extends Component {
                                     return (<span>{line}<br/></span>)})
                         : "식단 없음"}
                     </div> 
-                </div>
-                <div className="menubox">
+                </NavLink>
+                <NavLink to="/student3" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/student3">제3학생회관</NavLink><span>{today}</span>
+                        <NavLink to="/student3">제3학생회관</NavLink><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -76,10 +76,10 @@ class Home extends Component {
                                     return (<span>{line}<br/></span>)})
                         : "식단 없음"}
                     </div> 
-                </div>
-                <div className="menubox">
+                </NavLink>
+                <NavLink to="/sangrok" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/sangrok">상록회관</NavLink><span>{today}</span>
+                        <NavLink to="/sangrok">상록회관</NavLink><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -89,10 +89,10 @@ class Home extends Component {
                                     return (<span>{line}<br/></span>)})
                         : "식단 없음"}
                     </div> 
-                </div>
-                <div className="menubox">
+                </NavLink>
+                <NavLink to="/science" className="menubox">
                     <div className="menubox-header">
-                        <NavLink to="/science">생활과학대학</NavLink><span>{today}</span>
+                        <NavLink to="/science">생활과학대학</NavLink><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:30 ~ 오후 02:00 / <b>토 ~ 일</b> : 영업 안함</span>
@@ -102,10 +102,24 @@ class Home extends Component {
                                     return (<span>{line}<br/></span>)})
                         : "식단 없음"}
                     </div> 
-                </div>
-                <div className="menubox">
+                </NavLink>
+                <NavLink to="/dormitory" className="menubox">
                     <div className="menubox-header">
-                    <NavLink to="/student1">제1학생회관</NavLink><span>{today}</span>
+                    <NavLink to="/dormitory">기숙사</NavLink><span>오늘</span>
+                    </div>
+                    <div className="menubox-date">
+                        <span><b>월 ~ 금</b> : 오전 07:00 ~ 오전 09:00</span><span className="dorm-time-margin">오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:30</span>
+                        <span><b>토 ~ 일</b> : 오전 07:30 ~ 오전 09:00</span><span>오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:00</span>
+                    </div>
+                    <div className="menubox-body menubox-dorm">
+                    { dormitory ? dormitory.split('\n').map( line => {
+                                    return (<span>{line}<br/></span>)})
+                        : "식단 없음"}
+                    </div> 
+                </NavLink>
+                <NavLink to="/student1" className="menubox">
+                    <div className="menubox-header">
+                    <NavLink to="/student1">제1학생회관</NavLink><span>오늘</span>
                     </div>
                     <div className="menubox-date">
                         <span><b>월 ~ 금</b> : 오전 11:00 ~ 오후 07:00</span>
@@ -114,21 +128,7 @@ class Home extends Component {
                     <div className="menubox-body">
                         식단 없음
                     </div> 
-                </div>
-                <div className="menubox">
-                    <div className="menubox-header">
-                    <NavLink to="/dormitory">기숙사</NavLink><span>{today}</span>
-                    </div>
-                    <div className="menubox-date">
-                        <span><b>월 ~ 금</b> : 오전 07:00 ~ 오전 09:00</span><span>오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:30</span>
-                        <span><b>토 ~ 일</b> : 오전 07:30 ~ 오전 09:00</span><span>오전 11:30 ~ 오후 01:30 / 오후 05:30 ~ 오후 07:00</span>
-                    </div>
-                    <div className="menubox-body menubox-dorm">
-                    { dormitory ? dormitory.split('\n').map( line => {
-                                    return (<span>{line}<br/></span>)})
-                        : "식단 없음"}
-                    </div> 
-                </div>
+                </NavLink>
             </div>
         );
     }

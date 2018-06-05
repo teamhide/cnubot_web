@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Home from './components/Section/Home';
 import About from './components/Section/About';
 import Footer from './components/Footer';
-import Modal from './components/Section/Modal';
 import Student1 from './components/Section/Student1';
 import Student2 from './components/Section/Student2';
 import Student3 from './components/Section/Student3';
