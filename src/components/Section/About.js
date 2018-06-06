@@ -11,8 +11,8 @@ class About extends Component {
         return (
             <div className="section-about">
                 <div className="about-left">
-                    <img src={KakaoBotImg1} alt="img1" />
-                    <img src={KakaoBotImg2} alt="img2" />
+                    {/*<img src={KakaoBotImg1} alt="img1" />
+                    <img src={KakaoBotImg2} alt="img2" />*/}
                 </div>
                 <div className="about-right">
                     <span>본 서비스는 충남대학교 학식을 알려주는 서비스입니다.</span>

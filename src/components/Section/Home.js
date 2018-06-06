@@ -48,7 +48,7 @@ class Home extends Component {
         .catch(err => console.log("Connection fail"))
     }
     render() {
-        const { today, student2, student3, sangrok, science, dormitory } = this.state;
+        const { student2, student3, sangrok, science, dormitory } = this.state;
         return (
             <div className="section-home">
                 {/*{ modalVisible ? <Modal place={this.state.place} closeFunc={this.modalSwitch} /> : "" }*/}

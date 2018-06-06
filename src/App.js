@@ -7,6 +7,7 @@ import About from './components/Section/About';
 import Footer from './components/Footer';
 import Lotto from './components/Section/Lotto';
 import Honbab from './components/Section/Honbab';
+import Chat from './components/Section/Chat';
 import Student1 from './components/Section/Place/Student1';
 import Student2 from './components/Section/Place/Student2';
 import Student3 from './components/Section/Place/Student3';
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/lotto" component={Lotto} />
             <Route exact path="/honbab" component={Honbab} />
+            <Route exact path="/chat" component={Chat} />
             <Route exact path="/dormitory" component={Dormitory} />
             <Route exact path="/student1" component={Student1} />
             <Route exact path="/student2" component={Student2} />

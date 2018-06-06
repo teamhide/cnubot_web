@@ -21,6 +21,7 @@ class index extends Component {
                 <NavLink to="/about" onClick={this._toggleSwitch}>소개</NavLink>
                 <NavLink to="/lotto" onClick={this._toggleSwitch}>추천</NavLink>
                 <NavLink to="/honbab" onClick={this._toggleSwitch}>단무지</NavLink>
+                
             </div>
         )
     }
@@ -38,6 +39,7 @@ class index extends Component {
                         <NavLink to="/about">소개</NavLink>
                         <NavLink to="/lotto">추천</NavLink>
                         <NavLink to="/honbab">단무지</NavLink>
+                        
                     </div>
                 </div>
                 { toggle ? this._renderToggle() : "" }
