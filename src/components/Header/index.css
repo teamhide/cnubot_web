@@ -18,6 +18,7 @@ header{
     padding: 15px;
     padding-left: 20px;
     font-weight: 300;
+    font-size: 0.9rem;
 }
 .mobile-menu a:not(:last-child) {
     border-bottom: 1px solid lightgray;

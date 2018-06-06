@@ -12,7 +12,7 @@ class index extends Component {
     _toggleSwitch = () => {
         this.setState({
             toggle: !this.state.toggle
-        }, () => console.log(this.state.toggle))
+        })
     }
     _renderToggle = () => {
         return (
@@ -40,7 +40,6 @@ class index extends Component {
                         <NavLink to="/honbab">단무지</NavLink>
                     </div>
                 </div>
-                
                 { toggle ? this._renderToggle() : "" }
             </header>
         );

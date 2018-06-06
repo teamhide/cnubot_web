@@ -9,7 +9,6 @@
     height: auto;
 }
 .menubox {
-    height: 350px;
     width: 300px;
     margin: 20px;
     border: 0px solid lightgray;
@@ -22,7 +21,6 @@
     -moz-box-shadow: 0px 5px 5px lightgray;
     -webkit-box-shadow: 0px 5px 5px lightgray;
     box-shadow: 0px 5px 5px lightgray;
-    overflow: auto;
 }
 .menubox:hover {
     box-shadow: 10px 10px 10px 10px lightgray;
@@ -57,11 +55,9 @@
     margin-top: 10px;
     font-weight: 100;
     font-size: 0.8rem;
+    display: inline-block;
 }
-.menubox-dorm {
-    min-height: 100px;
-    overflow: hidden;
-}
+
 /* MENUBOX - DATE */
 .menubox-date {
     display: flex;
