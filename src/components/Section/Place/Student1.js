@@ -6,7 +6,7 @@ class Student1 extends Component {
         return (
             <div className="section-student1">
                 <div className="menubox">
-                    132123123123213231
+                    메뉴 추가중입니다.
                 </div>
             </div>
         );

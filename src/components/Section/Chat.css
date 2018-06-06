@@ -28,10 +28,25 @@
     font-weight: 100;
     color: #b2b2b2;
 }
-.chatbox-header input {
+.chatbox-header-bottom textarea {
     border: none;
     border-bottom: 1px solid lightgray;
     margin-top: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.chatbox-header-top {
+    display: flex;
+    align-items: center;
+}
+.chatbox-header-top span {
+    flex: 1;
+}
+.chatbox-header-top input {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    border-bottom: 1px solid lightgray;
     padding-bottom: 5px;
 }
 .chatbox-body {
@@ -45,4 +60,66 @@
     color: #e29024;
     font-weight: 500;
     cursor: pointer;
+}
+/* MEMOBOX */
+.memobox-header {
+    display: flex;
+    padding: 10px;
+}
+.memobox-header-icon {
+}
+.memobox-header-icon img {
+    width: 40px;
+    height: 40px;
+    margin-left: -8px;
+    margin-right: 5px;
+}
+.memobox-header-left {
+    display: flex;
+    flex: 1;
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+.memobox-header-right {
+    margin-top: 5px;
+}
+.memobox-header-right img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.memobox-body {
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+.memobox-comment {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: gray;
+}
+.memobox-comment-body {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+/* LOAD MORE */
+.load-more {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 300px;
+    background-color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 2px 2px 2px 2px lightgray;
+}
+.load-more:hover {
+    background-color: #efefef;
 }

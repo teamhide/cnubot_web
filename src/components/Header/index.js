@@ -21,7 +21,7 @@ class index extends Component {
                 <NavLink to="/about" onClick={this._toggleSwitch}>소개</NavLink>
                 <NavLink to="/lotto" onClick={this._toggleSwitch}>추천</NavLink>
                 <NavLink to="/honbab" onClick={this._toggleSwitch}>단무지</NavLink>
-                
+                <NavLink to="/chat" onClick={this._toggleSwitch}>채팅</NavLink>
             </div>
         )
     }
@@ -31,7 +31,7 @@ class index extends Component {
             <header>
                 <div className="pc-menu">
                     <div className="header-logo">
-                        <NavLink to="/">CNUBAB</NavLink>
+                        <NavLink to="/">HIGHFAIV</NavLink>
                         <span onClick={this._toggleSwitch}>&#9776;</span>
                     </div>
                     <div className="header-menu">
