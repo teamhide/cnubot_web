@@ -1,0 +1,38 @@
+.section-honbab {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+.section-honbab-lotto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.section-honbab-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-honbab-text span:first-child {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+.section-honbab-text span:last-child {
+    display: block;
+    font-size: 0.9rem;
+}
+.section-honbab-text a {
+    display: block;
+    text-decoration: none;
+    color: blue;
+}
+.sweet-loading {
+    margin-top: 10px;
+}
+.span-recommend {
+    margin-bottom: -50px;
+    font-size: 1.2rem;
+    color: indigo;
+    font-weight: 600;
+}
